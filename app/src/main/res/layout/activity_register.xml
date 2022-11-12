@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#05140B"
+    tools:context="com.example.tournamentScoring.RegisterActivity">
+
+             <ImageView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_above="@id/registertitle"
+                android:layout_marginBottom="-100dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/pgabslogo"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/registertitle"
+                android:text="New Member Registration"
+                android:textSize="20dp"
+                android:layout_marginTop="100dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:gravity="center" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="565dp"
+        android:layout_below="@+id/registertitle"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="15dp"
+        android:background="#728C69"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/textview_register_fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Full Name*"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editext_register_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_register_fullname"
+            android:background="@drawable/border"
+            android:hint="Enter your Full Name"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textview_register_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editext_register_fullname"
+            android:layout_marginTop="8dp"
+            android:hint="Email Address*"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editext_register_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_register_email"
+            android:background="@drawable/border"
+            android:hint="Enter your Email Address"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textview_register_dob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editext_register_email"
+            android:layout_marginTop="12dp"
+            android:hint="Date of Birth (dd/mm/yyyy)*"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editext_register_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_register_dob"
+            android:background="@drawable/border"
+            android:hint="Enter your date of birth (dd/mm/yyyy)"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textview_register_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editext_register_dob"
+            android:layout_marginTop="15dp"
+            android:hint="Phone Number*"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editext_register_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_register_mobile"
+            android:background="@drawable/border"
+            android:hint="Enter your phone number"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textview_register_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editext_register_mobile"
+            android:layout_marginTop="19dp"
+            android:hint="Password*"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editext_register_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_register_password"
+            android:background="@drawable/border"
+            android:hint="Enter your password"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textview_register_confirmpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editext_register_password"
+            android:layout_marginTop="18dp"
+            android:hint="Confirm Password*"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editext_register_confirmpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_register_confirmpassword"
+            android:background="@drawable/border"
+            android:hint="Enter your password again"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editext_register_confirmpassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#05140B"
+            android:text="REGISTER"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/haveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:text="Already have an Account"
+            android:textColor="#5A0404"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
