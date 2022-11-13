@@ -17,7 +17,7 @@
             android:name=".TournamentArchive"
             android:exported="true">
         <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.GET_CONTENT" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
@@ -26,7 +26,7 @@
             android:name=".UserActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.GET_CONTENT" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -35,7 +35,7 @@
             android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.ALL_APPS" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -62,7 +62,7 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.ALL_APPS" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

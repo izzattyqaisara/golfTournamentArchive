@@ -102,10 +102,6 @@ public class RegisterActivity extends AppCompatActivity {
             inputMobile.setError("Phone no. is required");
             inputMobile.requestFocus();
 
-        } else if (mobile.length() !=10) {
-            Toast.makeText(RegisterActivity.this, "Please re-enter your phone number", Toast.LENGTH_LONG).show();
-            inputMobile.setError("Phone no. should be 10 digits");
-            inputMobile.requestFocus();
 
         } else if (TextUtils.isEmpty(password)) {
             Toast.makeText(RegisterActivity.this, "Please Enter your password", Toast.LENGTH_LONG).show();
@@ -118,13 +114,12 @@ public class RegisterActivity extends AppCompatActivity {
             inputPassword.requestFocus();
 
         } else if (TextUtils.isEmpty(confirmPassword)) {
-            Toast.makeText(RegisterActivity.this, "Please confirm ypur password", Toast.LENGTH_LONG).show();
+            Toast.makeText(RegisterActivity.this, "Please confirm your password", Toast.LENGTH_LONG).show();
             inputConfirmPassword.setError("Password confirmation is required");
             inputConfirmPassword.requestFocus();
 
         } else if (password.equals((confirmPassword))) {
-            Toast.makeText(RegisterActivity.this, "Please confirm ypur password", Toast.LENGTH_LONG).show();
-            inputConfirmPassword.setError("Password confirmation is required");
+            Toast.makeText(RegisterActivity.this, "Correct Password!", Toast.LENGTH_LONG).show();
             inputConfirmPassword.requestFocus();
             inputPassword.clearComposingText();
             inputConfirmPassword.clearComposingText();

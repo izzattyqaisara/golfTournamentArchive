@@ -130,7 +130,7 @@
             android:layout_below="@+id/textview_register_password"
             android:background="@drawable/border"
             android:hint="Enter your password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:padding="6dp"
             android:textSize="16sp" />
 
@@ -150,7 +150,7 @@
             android:layout_below="@+id/textview_register_confirmpassword"
             android:background="@drawable/border"
             android:hint="Enter your password again"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:padding="6dp"
             android:textSize="16sp" />
 
