@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TournamentRegistration"
+    android:background="#728C69">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/pgabslogo" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Register to a Tournament"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="25dp"
+            android:id="@+id/Register_tournamentName"
+            android:hint="Enter Tournament Name"
+            android:inputType="textLongMessage"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColorHint="@color/white"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:id="@+id/Register_name"
+            android:hint="Enter your Name"
+            android:inputType="textLongMessage"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColorHint="@color/white"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:id="@+id/Register_Category"
+            android:hint="Enter Tournament Category"
+            android:inputType="textLongMessage"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColorHint="@color/white"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:id="@+id/Register_phoneNumber"
+            android:hint="Enter your Contact Number"
+            android:inputType="textLongMessage"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColorHint="@color/white"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerTournamentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#05140B"
+            android:text="REGISTER"
+            android:textSize="20dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelTournamentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="-48dp"
+            android:backgroundTint="#05140B"
+            android:text="CANCEL"
+            android:textSize="20dp" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/leisure_moment_golf" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout >

@@ -13,8 +13,19 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="344dp"
             android:background="#728C69">
+
+            <TextView
+                android:id="@+id/userText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="USER PROFILE"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="167dp"/>
 
             <ImageView
                 android:id="@+id/imageView_profile_dp"
@@ -29,17 +40,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageView_profile_dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:hint="loading..."
+                android:layout_marginTop="30dp"
+                android:hint="Welcome! Izzatty Qaisara"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@color/white" />
-             </RelativeLayout>
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="242dp"
-            android:layout_margin="15dp"
-            android:background="@color/white"
+            android:layout_height="231dp"
+            android:layout_marginBottom="80dp"
+            android:background="#999997"
             android:padding="15dp">
 
             <ImageView
@@ -53,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:hint="Loading.."
+                android:hint="Zam Izzatty Qaisara binti Zamhuri"
                 android:textSize="18sp" />
 
             <View
@@ -72,7 +83,7 @@
                 android:layout_alignStart="@id/email"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="20dp"
-                android:hint="Loading.."
+                android:hint="zety007@gmail.com"
                 android:textSize="18sp" />
 
             <ImageView
@@ -99,7 +110,7 @@
                 android:layout_alignStart="@id/dob"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="20dp"
-                android:hint="Loading.."
+                android:hint="5 September 2000"
                 android:textSize="18sp" />
 
             <ImageView
@@ -126,7 +137,7 @@
                 android:layout_alignStart="@id/mobile"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="20dp"
-                android:hint="Loading.."
+                android:hint="0192309007"
                 android:textSize="18sp" />
 
             <ImageView
@@ -162,7 +173,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="158dp"
-            android:layout_marginBottom="96dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/material_on_surface_emphasis_medium"
             android:text="HOME" />
 

@@ -109,6 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:id="@+id/textview_userprofile"
             android:text="USER PROFILE"
             android:textColor="@color/teal_700"
             android:textSize="20sp"
@@ -118,6 +119,7 @@
             android:layout_width="166dp"
             android:layout_height="142dp"
             android:layout_margin="8dp"
+            android:id="@+id/profilebtn"
             android:contentDescription="@string/app_name"
             android:padding="8dp"
             android:src="@drawable/userprofile" />
@@ -142,6 +144,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/textview_tournament_archive"
             android:gravity="center"
             android:text="TOURNAMENT ARCHIVE"
             android:textColor="@color/black"
@@ -153,6 +156,7 @@
             android:layout_height="156dp"
             android:layout_margin="12dp"
             android:contentDescription="@string/app_name"
+            android:id="@+id/archiveBtn"
             android:padding="8dp"
             android:src="@drawable/trophyarchiveicon" />
     </LinearLayout>

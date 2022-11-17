@@ -71,7 +71,7 @@ public class UserActivity extends AppCompatActivity {
         String userID = firebaseUser.getUid();
 
         //Extracting User Reference from Database for "Registered Users"
-        DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("golfAuth");
+        DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");
         referenceProfile.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
