@@ -107,23 +107,21 @@
             android:background="#a9a9a9" />
 
         <TextView
-            android:id="@+id/tournament_dateJoined"
+            android:id="@+id/tournament_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="200dp"
             android:layout_marginTop="170dp"
-            android:hint="Loading Date.."
+            android:hint="Loading Category.."
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tournamentText_dateJoined"
+            android:id="@+id/tournamentText_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="170dp"
-            android:layout_marginEnd="300dp"
-            android:text="Date Joined:"
+            android:text="Tournament Category:"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -136,23 +134,23 @@
             android:background="#a9a9a9" />
 
         <TextView
-            android:id="@+id/tournament_awardReceived"
+            android:id="@+id/tournament_dateJoined"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="120dp"
             android:layout_marginTop="240dp"
-            android:hint="Loading Awards.."
+            android:hint="Loading Date Joined.."
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tournamentText_awardReceived"
+            android:id="@+id/tournamentText_dateJoined"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="240dp"
-            android:layout_marginEnd="259dp"
-            android:text="Awards Received:"
+            android:layout_marginEnd="300dp"
+            android:text="Date Joined:"
             android:textSize="18sp"
             android:textStyle="bold" />
 
