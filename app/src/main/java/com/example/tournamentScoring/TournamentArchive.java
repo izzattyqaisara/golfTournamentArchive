@@ -25,9 +25,6 @@ public class TournamentArchive extends AppCompatActivity {
     private TextView archive_TournamentName, archive_FullName, archive_Category, archive_Date, archive_tournamentDesc;
     private ProgressBar progressBar;
     private String tournamentName, name, category, date, tournamentDesc;
-    private Button btnHome, btnProfile;
-
-    private FirebaseAuth authTournament;
 
 
     @Override
@@ -42,10 +39,10 @@ public class TournamentArchive extends AppCompatActivity {
         archive_tournamentDesc = findViewById(R.id.tournament_desc);
         progressBar = findViewById(R.id.progressBar);
 
-        btnHome = findViewById(R.id.homebtn);
-        btnProfile = findViewById(R.id.profilebtn);
+        Button btnHome = findViewById(R.id.homebtn);
+        Button btnProfile = findViewById(R.id.profilebtn);
 
-        authTournament = FirebaseAuth.getInstance();
+        FirebaseAuth authTournament = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authTournament.getCurrentUser();
 
         btnHome.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +62,7 @@ public class TournamentArchive extends AppCompatActivity {
         if (firebaseUser == null){
             Toast.makeText(TournamentArchive.this, "Something went wrong! Tournament's details are not available at the moment", Toast.LENGTH_LONG).show();
         } else{
-            progressBar.setVisibility(View.VISIBLE);
+//            progressBar.setVisibility(View.VISIBLE);
             showTournamentArchive(firebaseUser);
         }
     }
@@ -80,7 +77,7 @@ public class TournamentArchive extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ReadWriteTournamentDetails readTournamentDetails = snapshot.getValue(ReadWriteTournamentDetails.class);
                 if (readTournamentDetails != null) {
-                    name = firebaseUser.getDisplayName();
+                    name = readTournamentDetails.name;
                     tournamentName = readTournamentDetails.tournamentName;
                     category = readTournamentDetails.category;
                     date = readTournamentDetails.date;
@@ -93,13 +90,13 @@ public class TournamentArchive extends AppCompatActivity {
                     archive_tournamentDesc.setText(tournamentDesc);
 
                 }
-                progressBar.setVisibility(View.GONE);
+              //  progressBar.setVisibility(View.GONE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(TournamentArchive.this,"Something went wrong!", Toast.LENGTH_LONG).show();
-                progressBar.setVisibility(View.GONE);
+                //progressBar.setVisibility(View.GONE);
             }
         });
     }

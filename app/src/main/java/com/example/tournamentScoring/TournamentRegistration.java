@@ -114,7 +114,7 @@ public class TournamentRegistration extends AppCompatActivity {
         FirebaseUser firebaseUser = authTournament.getCurrentUser();
         firebaseUser.updateProfile(profileChangeRequest);
 
-        ReadWriteTournamentDetails writeTournamentDetails = new ReadWriteTournamentDetails(tournamentName, category, mobile, date, tournamentDesc);
+        ReadWriteTournamentDetails writeTournamentDetails = new ReadWriteTournamentDetails(name, tournamentName, category, mobile, date, tournamentDesc);
 
         DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Tournament details");
         referenceProfile.child(firebaseUser.getUid()).setValue(writeTournamentDetails).addOnCompleteListener(new OnCompleteListener<Void>() {

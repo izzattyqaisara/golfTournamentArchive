@@ -14,11 +14,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private TextView Tournament_Archive, User_Profile;
+    private TextView Tournament_Archive, User_Profile, Tournament_Registration, Scoring_Calculator;
     private ProgressBar progressBar;
-    private String tournament_Archive, user_Profile;
-    private Button btnArchive, btnProfile;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +24,13 @@ public class HomeActivity extends AppCompatActivity {
 
            Tournament_Archive = findViewById(R.id.textview_tournament_archive);
            User_Profile = findViewById(R.id.textview_userprofile);
+           Tournament_Registration = findViewById(R.id.textview_tournament_register);
+           Scoring_Calculator = findViewById(R.id.textview_tournament_scoring);
+
            ImageView btnProfile = findViewById(R.id.profilebtn);
            ImageView btnArchive = findViewById(R.id.archiveBtn);
+           ImageView btnTournamentReg = findViewById(R.id.tournamentRegBtn);
+           ImageView btnTournamentScore = findViewById(R.id.tournamentScoreBtn);
 
             progressBar = findViewById(R.id.progressBar);
 
@@ -46,6 +48,20 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(new Intent(HomeActivity.this, UserActivity.class));
                 }
             });
+
+            btnTournamentReg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(HomeActivity.this, TournamentRegistration.class));
+                }
+            });
+
+        btnTournamentScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, ScoringCalculator.class));
+            }
+        });
 
         }
     }
