@@ -7,7 +7,7 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#ACD1AF">
+    android:background="@drawable/bg2">
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15sp"
                 android:text="Player Name"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="15sp"
                 android:textStyle="italic"
 
@@ -53,38 +53,9 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/stname"
-                android:textColor="@color/colorPrimary"
+                android:id="@+id/name"
+                android:textColor="@color/black"
                 android:gravity="center"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15sp"
-                android:text="First Half"
-                android:textColor="@color/colorAccent"
-                android:textSize="15sp"
-                android:textStyle="italic"
-
-                />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/mark1"
-                android:textColor="@color/colorPrimary"
-                android:gravity="center"
-
                 />
 
         </LinearLayout>
@@ -101,9 +72,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15sp"
                 android:text="Handicap"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="15sp"
                 android:textStyle="italic"
-                android:textColor="@color/colorAccent"
 
                 />
 
@@ -111,37 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/handicap"
-                android:textColor="@color/colorPrimary"
-                android:gravity="center"
-
-                />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:text="Second Half"
-                android:textSize="15sp"
-                android:textStyle="italic"
-                android:textColor="@color/colorAccent"
-
-                />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/mark2"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/black"
                 android:gravity="center"
 
                 />
@@ -158,20 +99,67 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:text="Total"
+                android:layout_marginLeft="-72sp"
+                android:text="Category"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="15sp"
                 android:textStyle="italic"
-                android:textColor="@color/colorAccent"
+
+                />
+
+            <CheckBox
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/category1"
+                android:text="Rajawali"
+                android:textColor="@color/black"
+                android:gravity="center"
+                />
+
+            <CheckBox
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/category2"
+                android:text="Helang"
+                android:textColor="@color/black"
+                android:gravity="center"
+                />
+
+            <CheckBox
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/category3"
+                android:text="Merak"
+                android:textColor="@color/black"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="17sp"
+                android:text="Gross Score"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimaryDark"
 
                 />
 
             <EditText
-                android:id="@+id/total"
+                android:id="@+id/gross_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/black"
 
                 />
 
@@ -187,25 +175,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:text="Avg"
+                android:layout_marginLeft="17sp"
+                android:text="Net Score"
                 android:textSize="15sp"
                 android:textStyle="italic"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorPrimaryDark"
 
                 />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/avg"
-                android:textColor="@color/colorPrimary"
+                android:id="@+id/net_score"
+                android:textColor="@color/black"
                 android:gravity="center"
 
                 />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -217,26 +204,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:text="Grade"
+                android:layout_marginLeft="17sp"
+                android:text="Rank"
                 android:textSize="15sp"
                 android:textStyle="italic"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorPrimaryDark"
 
                 />
 
             <EditText
-                android:id="@+id/grade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/rank"
+                android:textColor="@color/black"
                 android:gravity="center"
-                android:textColor="@color/colorPrimary"
 
                 />
 
         </LinearLayout>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -245,6 +230,16 @@
             android:gravity="right"
             >
 
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="BACK"
+                android:textColor="#ffffff"
+
+                />
 
             <Button
                 android:layout_width="wrap_content"
@@ -265,6 +260,7 @@
                 android:background="@color/colorAccent"
                 android:id="@+id/btn2"
                 />
+
         </LinearLayout>
 
 

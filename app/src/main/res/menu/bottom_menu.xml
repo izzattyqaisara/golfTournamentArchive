@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/category"
+        android:icon="@drawable/ic_baseline_category_24"
+        android:title="CAT"
+        />
+
+    <item
+        android:id="@+id/acc"
+        android:icon="@drawable/myaccounticon"
+        android:title="MY ACCOUNT"
+        />
+
+    <item
+        android:id="@+id/leaderboard"
+        android:icon="@drawable/leaderboardicon"
+        android:title="LEADERBOARD"
+        />
+
+</menu>

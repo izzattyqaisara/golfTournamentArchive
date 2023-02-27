@@ -4,27 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#05140B"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.example.tournamentScoring.RegisterActivity">
 
-             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_above="@id/registertitle"
-                android:layout_marginBottom="-100dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/pgabslogo"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_above="@id/registertitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-100dp"
+        android:src="@drawable/pgabslogo"
+        android:transitionName="transition_logoimg"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/registertitle"
-                android:text="New Member Registration"
-                android:textSize="20dp"
-                android:layout_marginTop="100dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:gravity="center" />
+
+    <TextView
+        android:id="@+id/registertitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="New Member Registration"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -33,7 +35,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="15dp"
-        android:background="#728C69"
+        android:background="@drawable/bg1"
         android:padding="15dp">
 
         <TextView
@@ -41,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Full Name*"
+            android:textColorHint="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -61,6 +64,7 @@
             android:layout_below="@+id/editext_register_fullname"
             android:layout_marginTop="8dp"
             android:hint="Email Address*"
+            android:textColorHint="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -81,6 +85,7 @@
             android:layout_below="@id/editext_register_email"
             android:layout_marginTop="12dp"
             android:hint="Date of Birth (dd/mm/yyyy)*"
+            android:textColorHint="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -90,6 +95,7 @@
             android:layout_below="@+id/textview_register_dob"
             android:background="@drawable/border"
             android:hint="Enter your date of birth (dd/mm/yyyy)"
+
             android:inputType="textPersonName"
             android:padding="6dp"
             android:textSize="16sp" />
@@ -101,6 +107,7 @@
             android:layout_below="@id/editext_register_dob"
             android:layout_marginTop="15dp"
             android:hint="Phone Number*"
+            android:textColorHint="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -121,6 +128,7 @@
             android:layout_below="@id/editext_register_mobile"
             android:layout_marginTop="19dp"
             android:hint="Password*"
+            android:textColorHint="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -141,6 +149,7 @@
             android:layout_below="@id/editext_register_password"
             android:layout_marginTop="18dp"
             android:hint="Confirm Password*"
+            android:textColorHint="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
         <EditText
@@ -173,7 +182,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
             android:text="Already have an Account"
-            android:textColor="#5A0404"
+            android:textColor="@color/colorPrimaryDark"
             android:textStyle="italic" />
 
     </RelativeLayout>

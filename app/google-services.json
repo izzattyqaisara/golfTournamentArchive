@@ -34,6 +34,43 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003208398316:android:a76cc1a343952281c45cc9",
+        "android_client_info": {
+          "package_name": "com.example.tournamentScoring"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003208398316-sf388f6q2jnqbld566cdlb5udad9h024.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tournamentScoring",
+            "certificate_hash": "c7be37170ab4db3f46461e8c6ce631972e8545ee"
+          }
+        },
+        {
+          "client_id": "1003208398316-a5f2r56ivdlml7lbbk7nvf53o1n7436f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7V2uM4n0dvfQmroaKcRGyfBss8RVVg9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003208398316-a5f2r56ivdlml7lbbk7nvf53o1n7436f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

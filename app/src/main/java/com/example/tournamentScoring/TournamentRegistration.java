@@ -26,13 +26,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
 public class TournamentRegistration extends AppCompatActivity {
 
     EditText inputTournamentName, inputName, inputCategory, inputPhoneNum, inputTournamentDesc, inputDateJoined;
     Button btnRegister, btnCancel;
     ProgressDialog progressDialog;
-    private FirebaseAuth authTournament;
+    FirebaseAuth authTournament;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,7 @@ public class TournamentRegistration extends AppCompatActivity {
         inputTournamentName = findViewById(R.id.Register_tournamentName);
         inputName = findViewById(R.id.Register_name);
         inputCategory = findViewById(R.id.Register_Category);
-        inputPhoneNum = findViewById(R.id.Register_phoneNumber);
+        inputPhoneNum = findViewById(R.id.Register_mobile);
         inputTournamentDesc = findViewById(R.id.Register_tournamentDesc);
         inputDateJoined = findViewById(R.id.Register_dateJoined);
 
@@ -51,7 +50,15 @@ public class TournamentRegistration extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         ProgressBar progressBar;
 
-        authTournament = FirebaseAuth.getInstance();
+//TODOLIST
+//keyinbankrefno
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TournamentRegistration.this, HomeActivity.class));
+            }
+        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,8 +72,8 @@ public class TournamentRegistration extends AppCompatActivity {
         String tournamentName = inputTournamentName.getText().toString();
         String name = inputName.getText().toString();
         String category = inputCategory.getText().toString();
-        String mobile = inputPhoneNum.getText().toString();
         String date = inputDateJoined.getText().toString();
+        String mobile = inputPhoneNum.getText().toString();
         String tournamentDesc = inputTournamentDesc.getText().toString();
 
         if (TextUtils.isEmpty(tournamentName)) {
@@ -100,24 +107,27 @@ public class TournamentRegistration extends AppCompatActivity {
             inputDateJoined.requestFocus();
 
         } else
-            registerTournament(tournamentName, name, category, mobile, date, tournamentDesc);
-            progressDialog.setMessage("Please Wait While Registration...");
-            progressDialog.setTitle("Registration");
-            progressDialog.setCanceledOnTouchOutside(false);
-            progressDialog.show();
+            registerTournament(tournamentName, name, category, date, mobile, tournamentDesc);
+        progressDialog.setMessage("Please Wait While Registration...");
+        progressDialog.setTitle("Registration");
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
 
     }
 
-    private void registerTournament(String tournamentName, String name, String category, String mobile, String date, String tournamentDesc) {
+    private void registerTournament(String tournamentName, String name, String category, String date, String mobile, String tournamentDesc) {
+
+        FirebaseAuth authTournament = FirebaseAuth.getInstance();
 
         UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(name).build();
         FirebaseUser firebaseUser = authTournament.getCurrentUser();
         firebaseUser.updateProfile(profileChangeRequest);
 
-        ReadWriteTournamentDetails writeTournamentDetails = new ReadWriteTournamentDetails(name, tournamentName, category, mobile, date, tournamentDesc);
+        ReadWriteTournamentDetails writeTournamentDetails = new ReadWriteTournamentDetails(tournamentName, category, date, mobile, tournamentDesc);
 
-        DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Tournament details");
+        DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Tournament registration");
         referenceProfile.child(firebaseUser.getUid()).setValue(writeTournamentDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
+
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
@@ -130,6 +140,8 @@ public class TournamentRegistration extends AppCompatActivity {
                     finish();
                 }
             }
+
         });
     }
 }
+

@@ -1,0 +1,66 @@
+package com.example.tournamentScoring;
+
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.List;
+
+public class CategoryAdapter extends BaseAdapter {
+
+    private List<CategoryModel> catList;
+    public CategoryAdapter(List<CategoryModel> catList){
+        this.catList = catList;
+    }
+
+    @Override
+    public int getCount() {
+        return catList.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+
+        View myView;
+
+        if (view == null)
+        {
+            myView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cat_item_layout,viewGroup,false);
+        }
+        else
+        {
+           myView = view;
+        }
+
+        myView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), TournamentActivity.class);
+                intent.putExtra("CAT_INDEX", TournamentAdapter.position);
+                view.getContext().startActivity(intent);
+
+            }
+        });
+
+        TextView catName = myView.findViewById(R.id.catName);
+        TextView noOfTournament = myView.findViewById(R.id.noOfTournament);
+
+        catName.setText(catList.get(i).getName());
+        noOfTournament.setText(String.valueOf(catList.get(i).getNoOfTournament()) + " Tournaments");
+
+        return myView;
+    }
+}

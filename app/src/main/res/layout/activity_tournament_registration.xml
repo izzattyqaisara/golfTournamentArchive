@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TournamentRegistration"
-    android:background="#728C69">
+    android:background="@drawable/bg2">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -40,7 +40,7 @@
             android:inputType="textLongMessage"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textColorHint="@color/white"/>
+            android:textColorHint="@color/colorPrimaryDark"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
             android:inputType="textLongMessage"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textColorHint="@color/white"/>
+            android:textColorHint="@color/colorPrimaryDark"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -62,18 +62,7 @@
             android:inputType="textLongMessage"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textColorHint="@color/white"/>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="10dp"
-            android:id="@+id/Register_phoneNumber"
-            android:hint="Enter your Contact Number"
-            android:inputType="textLongMessage"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textColorHint="@color/white"/>
+            android:textColorHint="@color/colorPrimaryDark"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -84,7 +73,18 @@
             android:inputType="textLongMessage"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textColorHint="@color/white"/>
+            android:textColorHint="@color/colorPrimaryDark"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:id="@+id/Register_mobile"
+            android:hint="Enter Phone No."
+            android:inputType="textLongMessage"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textColorHint="@color/colorPrimaryDark"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -95,7 +95,7 @@
             android:inputType="textLongMessage"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textColorHint="@color/white"/>
+            android:textColorHint="@color/colorPrimaryDark"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/registerTournamentBtn"
@@ -120,8 +120,9 @@
 
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/leisure_moment_golf" />
 
 

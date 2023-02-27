@@ -9,19 +9,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText inputPassword, inputEmail;
+    TextInputLayout inputPassword, inputEmail;
     Button btnLogin;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
@@ -35,8 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        inputEmail = findViewById(R.id.email);
-        inputPassword = findViewById(R.id.password);
+        inputEmail = (TextInputLayout) findViewById(R.id.email);
+        inputPassword = (TextInputLayout) findViewById(R.id.password);
 
         btnLogin = findViewById(R.id.loginbtn);
         progressDialog = new ProgressDialog(this);
@@ -58,8 +61,8 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             private void PerformLogin() {
-                String email = inputEmail.getText().toString();
-                String password = inputPassword.getText().toString();
+                String email = inputEmail.getEditText().getText().toString();
+                String password = inputPassword.getEditText().getText().toString();
 
                 if (!email.matches((emailPattern))) {
                     inputEmail.setError("Enter Correct Email");
@@ -74,31 +77,40 @@ public class LoginActivity extends AppCompatActivity {
                     mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                progressDialog.dismiss();
-                                sendUserToNextActivity();
-                                Toast.makeText(com.example.tournamentScoring.LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(LoginActivity.this, UserActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                finish();
+                            CategoryFragment.loadCategories(new MyCompleteListener() {
+                                @Override
+                                public void onSuccess() {
+                                    progressDialog.dismiss();
+                                    sendUserToNextActivity();
+                                    Toast.makeText(com.example.tournamentScoring.LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
-                            } else {
-                                progressDialog.dismiss();
-                                Toast.makeText(com.example.tournamentScoring.LoginActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                    finish();
+
+                                }
+
+                                @Override
+                                public void onFailure() {
+                                    progressDialog.dismiss();
+                                    Toast.makeText(com.example.tournamentScoring.LoginActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
+
+                                }
+                            });
+
 
                 }
-            }
-
 
             private void sendUserToNextActivity() {
-                Intent intent = new Intent(com.example.tournamentScoring.LoginActivity.this, UserActivity.class);
+                Intent intent = new Intent(com.example.tournamentScoring.LoginActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+            }
+
+        });
+    }
             }
 
         });

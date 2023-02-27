@@ -47,7 +47,6 @@ public class UserActivity extends AppCompatActivity {
         textViewMobile = findViewById(R.id.textview_show_mobile);
         progressBar = findViewById(R.id.progressBar);
 
-        btnHome = findViewById(R.id.homebtn);
 
         authProfile = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfile.getCurrentUser();
